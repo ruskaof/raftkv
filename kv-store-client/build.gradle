@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+    id("org.springframework.boot") version "3.4.0"
+}
+
+group = 'ru.itmo.rusinov.consensus.kv.store.client'
+version = 'snapshot'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation(project(':kv-store'))
+
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.17.2'
+    implementation 'com.fasterxml.jackson.core:jackson-annotations:2.17.2'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.4.0'
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-api:2.8.4'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.4'
+
+    compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}

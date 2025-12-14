@@ -1,0 +1,3 @@
+rootProject.name = 'raftkv'
+
+include("kv-store", "kv-store-client")
